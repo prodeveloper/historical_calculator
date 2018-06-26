@@ -1,0 +1,29 @@
+
+{% extends 'layout.html'%}
+
+{% block content%}
+<body>
+  <div class="container">
+  <form action="{{url_for('calculate')}}" method = "POST">
+  <div class="form-group">
+    <label for="val1">Value 1</label>
+    <input type="text" class="form-control" id="val1" placeholder="Value 1" name="val1">
+
+  </div>
+    <div class="form-group">
+    <label for="val2">Value 2</label>
+    <input type="text" class="form-control" id="val2"  placeholder="Value 2" name="val2">
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+<table>
+{% for key,result in data.items() %}
+<tr>
+  <td>{{result}} </td>
+</tr>
+{%endfor%}
+</table>
+</div>
+{% endblock %}
